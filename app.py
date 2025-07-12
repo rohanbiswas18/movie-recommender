@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import requests
 
+theme.base="dark"
 #functions for fetching poster
 def fetch_poster(movies_id):
     response=requests.get('https://api.themoviedb.org/3/movie/{}?api_key=19b14193a2190d4e4e34415ee90f6fbc&language=en-US'.format(movies_id))
