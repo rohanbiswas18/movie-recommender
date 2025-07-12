@@ -1,10 +1,13 @@
 import streamlit as st
 import pickle
 import requests
+
+#functions for fetching poster
 def fetch_poster(movies_id):
     response=requests.get('https://api.themoviedb.org/3/movie/{}?api_key=19b14193a2190d4e4e34415ee90f6fbc&language=en-US'.format(movies_id))
     data = response.json()
     return "https://image.tmdb.org/t/p/w500"+data['poster_path']
+#finction for the rocommend button which return image and name
 def recommend(movie):
     movie_index = movies[movies['title'] == movie].index[0]
     distances = similarity[movie_index]
@@ -17,12 +20,13 @@ def recommend(movie):
         recommended_movies.append(movies.iloc[i[0]].title)
         recommended_movies_posters.append(fetch_poster(movies_id))
     return recommended_movies,recommended_movies_posters
-movies = pickle.load(open('movies.pkl', 'rb'))
 
-similarity= pickle.load(open('similarity.pkl', 'rb'))
+movies = pickle.load(open('movies.pkl', 'rb'))#loading the pkl file for movies
+
+similarity= pickle.load(open('similarity.pkl', 'rb'))#loading the pkl files for recommendation
 st.title('Movie Recommender System')
 
-st.header(""Hi, what Should I recommend For you!")
+st.header("Hi, what Should I recommend For you!")
 selected_movies = st.selectbox(
     movies['title'].values,
 )
