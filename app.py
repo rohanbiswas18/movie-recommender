@@ -29,7 +29,7 @@ selected_movies = st.selectbox(
 if st.button("Recommend"):
     names,posters=recommend(selected_movies)
     st.header("My Top 5 Recommendations:")
-    col1, col2, col3 ,col4, col5 = st.columns(5, border=True,vertical_alignment="bottom")
+    col1, col2, col3 ,col4, col5 = st.columns(5, border=True,vertical_alignment="middle")
     
 
     with col1:
