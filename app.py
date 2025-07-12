@@ -26,14 +26,14 @@ movies = pickle.load(open('movies.pkl', 'rb'))#loading the pkl file for movies
 similarity= pickle.load(open('similarity.pkl', 'rb'))#loading the pkl files for recommendation
 st.title('Movie Recommender System')
 
-st.header("Hi, what Should I recommend For you!")
+st.subheader("Hi, what Should I recommend For you!")
 selected_movies = st.selectbox(
-    "Movie list",
+    " ",
     movies['title'].values,
 )
 if st.button("Recommend"):
     names,posters=recommend(selected_movies)
-    st.header("My Top 5 Recommendations:")
+    st.subheader("My Top 5 Recommendations:")
     col1, col2, col3 ,col4, col5 = st.columns(5, border=True,vertical_alignment="top")
     
 
