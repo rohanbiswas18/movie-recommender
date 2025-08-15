@@ -29,8 +29,8 @@ This project is ideal for learning **data science concepts** like data cleaning,
 ---
 
 ## 📂 Project Structure
-movie-recommendation/
-│
+## movie-recommendation/
+<!-- │
 ├── data/ # Movie dataset(s) in CSV format
 │ └── movies.csv
 │
@@ -40,12 +40,4 @@ movie-recommendation/
 │ ├── collaborative.py # Collaborative filtering logic
 │
 ├── README.md # Project documentation
-└── requirements.txt # Python dependencies
----
-
-## 🚀 Installation & Usage
-
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/yourusername/movie-recommendation.git
-cd movie-recommendation
+└── requirements.txt # Python dependencies -->
